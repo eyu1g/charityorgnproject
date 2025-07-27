@@ -1,1 +1,10 @@
 project_id = "rapxmkkctesaotksvnfb"
+
+[functions.contact-form]
+verify_jwt = false
+
+[functions.newsletter-signup]
+verify_jwt = false
+
+[functions.donation-handler]
+verify_jwt = false
