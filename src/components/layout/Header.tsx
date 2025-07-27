@@ -1,11 +1,19 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Heart } from "lucide-react";
+import { Menu, X, Heart, User, LogOut } from "lucide-react";
+import { useAuth } from "@/hooks/useAuth";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { user, signOut } = useAuth();
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -49,13 +57,36 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Donate Button */}
-          <div className="hidden md:block">
+          {/* Auth & Donate Buttons */}
+          <div className="hidden md:flex items-center space-x-4">
             <Link to="/donate">
               <Button variant="cta" size="sm">
                 Donate Now
               </Button>
             </Link>
+            
+            {user ? (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" size="sm">
+                    <User className="w-4 h-4 mr-2" />
+                    Account
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem onClick={signOut}>
+                    <LogOut className="w-4 h-4 mr-2" />
+                    Sign Out
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <Link to="/auth">
+                <Button variant="outline" size="sm">
+                  Sign In
+                </Button>
+              </Link>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -92,6 +123,28 @@ const Header = () => {
                   Donate Now
                 </Button>
               </Link>
+              
+              {user ? (
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="w-full"
+                  onClick={() => {
+                    signOut();
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  <LogOut className="w-4 h-4 mr-2" />
+                  Sign Out
+                </Button>
+              ) : (
+                <Link to="/auth" onClick={() => setIsMenuOpen(false)}>
+                  <Button variant="outline" size="sm" className="w-full">
+                    <User className="w-4 h-4 mr-2" />
+                    Sign In
+                  </Button>
+                </Link>
+              )}
             </nav>
           </div>
         )}
