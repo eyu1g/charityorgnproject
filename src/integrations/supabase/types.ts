@@ -14,7 +14,402 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      contact_submissions: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          message: string
+          name: string
+          phone: string | null
+          status: string | null
+          subject: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          message: string
+          name: string
+          phone?: string | null
+          status?: string | null
+          subject: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string
+          name?: string
+          phone?: string | null
+          status?: string | null
+          subject?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      donations: {
+        Row: {
+          amount: number
+          anonymous: boolean | null
+          created_at: string
+          currency: string | null
+          donor_email: string
+          donor_name: string
+          id: string
+          message: string | null
+          payment_id: string | null
+          payment_method: string | null
+          project_id: string | null
+          status: string | null
+          updated_at: string
+        }
+        Insert: {
+          amount: number
+          anonymous?: boolean | null
+          created_at?: string
+          currency?: string | null
+          donor_email: string
+          donor_name: string
+          id?: string
+          message?: string | null
+          payment_id?: string | null
+          payment_method?: string | null
+          project_id?: string | null
+          status?: string | null
+          updated_at?: string
+        }
+        Update: {
+          amount?: number
+          anonymous?: boolean | null
+          created_at?: string
+          currency?: string | null
+          donor_email?: string
+          donor_name?: string
+          id?: string
+          message?: string | null
+          payment_id?: string | null
+          payment_method?: string | null
+          project_id?: string | null
+          status?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "donations_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      gallery_items: {
+        Row: {
+          category: string
+          created_at: string
+          description: string | null
+          featured: boolean | null
+          id: string
+          image_url: string
+          order_index: number | null
+          project_id: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          description?: string | null
+          featured?: boolean | null
+          id?: string
+          image_url: string
+          order_index?: number | null
+          project_id?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string | null
+          featured?: boolean | null
+          id?: string
+          image_url?: string
+          order_index?: number | null
+          project_id?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "gallery_items_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      news_articles: {
+        Row: {
+          author_id: string | null
+          category: string
+          content: string
+          created_at: string
+          excerpt: string
+          featured: boolean | null
+          id: string
+          image_url: string | null
+          published: boolean | null
+          published_at: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          author_id?: string | null
+          category: string
+          content: string
+          created_at?: string
+          excerpt: string
+          featured?: boolean | null
+          id?: string
+          image_url?: string | null
+          published?: boolean | null
+          published_at?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          author_id?: string | null
+          category?: string
+          content?: string
+          created_at?: string
+          excerpt?: string
+          featured?: boolean | null
+          id?: string
+          image_url?: string | null
+          published?: boolean | null
+          published_at?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "news_articles_author_id_fkey"
+            columns: ["author_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      newsletter_subscribers: {
+        Row: {
+          email: string
+          id: string
+          subscribed: boolean | null
+          subscribed_at: string
+          unsubscribed_at: string | null
+        }
+        Insert: {
+          email: string
+          id?: string
+          subscribed?: boolean | null
+          subscribed_at?: string
+          unsubscribed_at?: string | null
+        }
+        Update: {
+          email?: string
+          id?: string
+          subscribed?: boolean | null
+          subscribed_at?: string
+          unsubscribed_at?: string | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          full_name: string | null
+          id: string
+          role: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          role?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          role?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      projects: {
+        Row: {
+          beneficiaries: number | null
+          budget: number | null
+          category: string
+          completion_date: string | null
+          created_at: string
+          description: string
+          end_date: string | null
+          id: string
+          image_url: string | null
+          impact: string | null
+          location: string
+          progress: number | null
+          start_date: string | null
+          status: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          beneficiaries?: number | null
+          budget?: number | null
+          category: string
+          completion_date?: string | null
+          created_at?: string
+          description: string
+          end_date?: string | null
+          id?: string
+          image_url?: string | null
+          impact?: string | null
+          location: string
+          progress?: number | null
+          start_date?: string | null
+          status?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          beneficiaries?: number | null
+          budget?: number | null
+          category?: string
+          completion_date?: string | null
+          created_at?: string
+          description?: string
+          end_date?: string | null
+          id?: string
+          image_url?: string | null
+          impact?: string | null
+          location?: string
+          progress?: number | null
+          start_date?: string | null
+          status?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      team_members: {
+        Row: {
+          active: boolean | null
+          bio: string | null
+          created_at: string
+          department: string | null
+          email: string | null
+          expertise: string[] | null
+          id: string
+          image_url: string | null
+          member_type: string
+          name: string
+          order_index: number | null
+          phone: string | null
+          role: string
+          social_links: Json | null
+          updated_at: string
+        }
+        Insert: {
+          active?: boolean | null
+          bio?: string | null
+          created_at?: string
+          department?: string | null
+          email?: string | null
+          expertise?: string[] | null
+          id?: string
+          image_url?: string | null
+          member_type?: string
+          name: string
+          order_index?: number | null
+          phone?: string | null
+          role: string
+          social_links?: Json | null
+          updated_at?: string
+        }
+        Update: {
+          active?: boolean | null
+          bio?: string | null
+          created_at?: string
+          department?: string | null
+          email?: string | null
+          expertise?: string[] | null
+          id?: string
+          image_url?: string | null
+          member_type?: string
+          name?: string
+          order_index?: number | null
+          phone?: string | null
+          role?: string
+          social_links?: Json | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      thematic_areas: {
+        Row: {
+          active: boolean | null
+          created_at: string
+          description: string
+          details: string | null
+          icon: string | null
+          id: string
+          key_activities: string[] | null
+          order_index: number | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          active?: boolean | null
+          created_at?: string
+          description: string
+          details?: string | null
+          icon?: string | null
+          id?: string
+          key_activities?: string[] | null
+          order_index?: number | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          active?: boolean | null
+          created_at?: string
+          description?: string
+          details?: string | null
+          icon?: string | null
+          id?: string
+          key_activities?: string[] | null
+          order_index?: number | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
