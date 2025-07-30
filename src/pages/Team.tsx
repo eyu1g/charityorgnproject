@@ -5,11 +5,11 @@ import { Mail, Linkedin, Twitter } from "lucide-react";
 
 const Team = () => {
   const founder = {
-    name: "Dr. Sarah Johnson",
-    role: "Founder & Executive Director",
-    bio: "Dr. Johnson founded HFC Foundation in 2014 after 15 years of humanitarian work across Africa and Asia. She holds a PhD in International Development and has been recognized globally for her innovative approaches to sustainable development.",
+    name: "Yewoinshet Masresha",
+    role: "Founder & Visionary Leader",
+    bio: "Yewoinshet Masresha founded Hope for Children Organization in November 2000. Born in Babile, Harari region, she holds a Master's degree in Social Psychology from Addis Ababa University. With over 18 years of dedicated service, she established a revolutionary group-home model that has nurtured over 130 children. Her legacy continues to inspire the organization's mission of creating families built on love and commitment.",
     image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
-    email: "sarah@hfc.org",
+    email: "founder@hfc.org",
     linkedin: "#",
     twitter: "#"
   };

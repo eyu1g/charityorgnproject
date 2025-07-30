@@ -1,28 +1,38 @@
 import Layout from "@/components/layout/Layout";
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Eye, Target, Users } from "lucide-react";
+import { Heart, Eye, Target, Users, Shield, Activity } from "lucide-react";
 
 const About = () => {
   const values = [
     {
       icon: Heart,
-      title: "Compassion",
-      description: "We approach every situation with empathy and understanding, putting human dignity at the center of all our work."
-    },
-    {
-      icon: Target,
-      title: "Integrity",
-      description: "We maintain the highest standards of transparency and accountability in all our operations and partnerships."
+      title: "Wholeness",
+      description: "In working with children, every aspect of their growth & development must be addressed, including their physical and psychological wellbeing."
     },
     {
       icon: Users,
-      title: "Collaboration",
-      description: "We believe in the power of partnerships and work closely with communities to create sustainable solutions."
+      title: "Inclusion and Equity",
+      description: "Ensuring that every individual regardless of gender, age, disability, ethnicity, social status, or background has fair access to resources and opportunities."
+    },
+    {
+      icon: Target,
+      title: "Integrity and Accountability",
+      description: "Acting with honesty, ethics, and transparency in all activities and decisions while being responsible for our actions and using resources appropriately."
+    },
+    {
+      icon: Activity,
+      title: "Participation",
+      description: "Actively involving community members, especially beneficiaries, in planning, decision-making, and implementation of development initiatives."
+    },
+    {
+      icon: Shield,
+      title: "Respect and Dignity",
+      description: "Treating all people with fairness, empathy, and appreciation for their humanity while recognizing and honouring cultural diversity."
     },
     {
       icon: Eye,
-      title: "Innovation",
-      description: "We continuously seek creative and effective approaches to address humanitarian challenges."
+      title: "Resilience and Empowerment",
+      description: "Building people's capacity to overcome challenges and lead independent, fulfilling lives through knowledge, skills, and confidence building."
     }
   ];
 
@@ -33,10 +43,10 @@ const About = () => {
         <section className="py-20 bg-gradient-hero">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-              About HFC Foundation
+              About Hope for Children Organization
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
-              Building bridges of hope and creating sustainable change in communities across the globe
+              A country where every individual lives in a joyful and healthy environment within a transparent and just society
             </p>
           </div>
         </section>
@@ -48,23 +58,19 @@ const About = () => {
               <h2 className="text-4xl font-bold mb-8 text-center text-foreground">Our Story</h2>
               <div className="prose prose-lg mx-auto text-muted-foreground">
                 <p className="text-lg leading-relaxed mb-6">
-                  Founded in 2014, HFC Foundation emerged from a simple yet powerful belief: 
-                  that every individual deserves access to basic human needs and opportunities 
-                  for growth. What started as a small community initiative has grown into a 
-                  comprehensive humanitarian organization serving communities across multiple continents.
+                  Hope for Children Organization (HFC) is an indigenous, non-political, non-faith-based 
+                  local NGO, established in November 2000 in Ethiopia with the key objectives of sustainable 
+                  and comprehensive community based care and support for children and families affected by HIV/AIDS.
                 </p>
                 <p className="text-lg leading-relaxed mb-6">
-                  Our journey began when our founder witnessed the urgent need for sustainable 
-                  development solutions in underserved communities. Recognizing that temporary 
-                  aid alone was not enough, we committed to creating long-term, sustainable 
-                  programs that empower communities to thrive independently.
+                  The organization has 25 years' experience on OVC addressing their education, health and care 
+                  and support aspects. In relation to this, HFC has managed to reach about 27,000 OVC and more 
+                  than 10,000 PLWHA through mobilizing 450 volunteer service providers.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  Today, HFC Foundation operates in 15 countries, working alongside local 
-                  partners to implement projects in healthcare, education, emergency relief, 
-                  and sustainable development. Our approach is community-centered, ensuring 
-                  that local voices guide our efforts and that our impact endures long after 
-                  our initial involvement.
+                  Currently, HFC provides holistic support to HIV-AIDS infected and affected children including 
+                  residential care, psychosocial services, educational support, and community mobilization. 
+                  We have active projects in Addis Ababa City Administration, Oromia and Harari regional states.
                 </p>
               </div>
             </div>
@@ -79,10 +85,10 @@ const About = () => {
                 <CardContent className="p-8">
                   <h3 className="text-3xl font-bold mb-6 text-primary">Our Mission</h3>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    To create sustainable positive change in communities worldwide by addressing 
-                    critical needs in healthcare, education, emergency relief, and development. 
-                    We work in partnership with local communities to build capacity, foster 
-                    self-reliance, and promote human dignity.
+                    HFCO has a mission, dedicated to fostering the development of highly vulnerable 
+                    Community members, children, women, youth, and their caregivers, empowering them 
+                    to become empowered, self-sufficient and responsible members of their communities 
+                    through a participatory and holistic approach.
                   </p>
                 </CardContent>
               </Card>
@@ -91,10 +97,8 @@ const About = () => {
                 <CardContent className="p-8">
                   <h3 className="text-3xl font-bold mb-6 text-accent">Our Vision</h3>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    A world where every community has the resources, knowledge, and opportunities 
-                    needed to thrive. We envision sustainable development that respects local 
-                    cultures, protects the environment, and ensures that future generations 
-                    inherit a more equitable and prosperous world.
+                    "A country where every individual lives in a joyful and healthy environment 
+                    within a transparent and just society"
                   </p>
                 </CardContent>
               </Card>
@@ -106,7 +110,7 @@ const About = () => {
         <section className="py-20">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-16 text-foreground">Our Values</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {values.map((value, index) => (
                 <Card key={index} className="shadow-medium hover:shadow-strong transition-all transform hover:-translate-y-2">
                   <CardContent className="p-8 text-center">

@@ -6,40 +6,40 @@ import heroImage from "@/assets/hero-image.jpg";
 
 const Home = () => {
   const stats = [
-    { number: "500+", label: "Lives Impacted" },
-    { number: "25", label: "Active Projects" },
-    { number: "15", label: "Communities Served" },
-    { number: "10", label: "Years of Service" },
+    { number: "37,000+", label: "OVC & PLWHA Reached" },
+    { number: "25", label: "Years of Service" },
+    { number: "450", label: "Volunteer Providers" },
+    { number: "34", label: "CSOs Strengthened" },
   ];
 
   const focusAreas = [
     {
       icon: Heart,
-      title: "Healthcare",
-      description: "Providing essential medical services and health education to underserved communities."
+      title: "Child & Youth Development",
+      description: "Comprehensive support for orphans and vulnerable children including health, education and nutrition."
     },
     {
       icon: Users,
-      title: "Education",
-      description: "Building schools, training teachers, and providing educational resources."
+      title: "Community Empowerment",
+      description: "Building livelihoods and strengthening community capacity for sustainable development."
     },
     {
       icon: Globe,
-      title: "Sustainable Development",
-      description: "Creating lasting change through environmentally conscious projects."
+      title: "Good Governance & Human Rights",
+      description: "Promoting transparency, accountability, and civic engagement in communities."
     },
     {
       icon: Target,
-      title: "Emergency Relief",
-      description: "Rapid response to disasters and humanitarian crises."
+      title: "HIV/AIDS Prevention & Care",
+      description: "Comprehensive HIV/AIDS prevention, care and support programs for affected communities."
     }
   ];
 
   const achievements = [
-    "Built 15 schools across rural communities",
-    "Provided clean water access to 5,000+ people",
-    "Trained 200+ healthcare workers",
-    "Delivered emergency aid to 1,000+ families"
+    "Reached over 27,000 orphans and vulnerable children",
+    "Supported more than 10,000 people living with HIV/AIDS",
+    "Mobilized 450 volunteer service providers",
+    "Operated 12 group homes caring for 130 children"
   ];
 
   return (
@@ -104,9 +104,9 @@ const Home = () => {
               Our Mission
             </h2>
             <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
-              HFC Foundation is dedicated to creating sustainable positive change in communities 
-              worldwide. Through our comprehensive humanitarian programs, we address critical 
-              needs in healthcare, education, emergency relief, and sustainable development.
+              HFCO is dedicated to fostering the development of highly vulnerable community members, 
+              children, women, youth, and their caregivers, empowering them to become self-sufficient 
+              and responsible members of their communities through a participatory and holistic approach.
             </p>
             <Link to="/about">
               <Button variant="default" size="lg">

@@ -1,112 +1,99 @@
 import Layout from "@/components/layout/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Heart, GraduationCap, Droplet, Zap, Sprout, Shield, Users, Building } from "lucide-react";
+import { Heart, Users, Scale, Shield, Zap, TreePine, Activity, ArrowRight } from "lucide-react";
 
-const ThematicAreas = () => {
-  const thematicAreas = [
+const PriorityAreas = () => {
+  const priorityAreas = [
     {
       icon: Heart,
-      title: "Healthcare",
-      description: "Improving access to quality healthcare services in underserved communities",
-      details: "We focus on establishing mobile health clinics, training healthcare workers, maternal and child health programs, and disease prevention initiatives. Our healthcare projects aim to reduce mortality rates and improve overall health outcomes in rural and remote areas.",
+      title: "Human Development - Child and Youth Development",
+      description: "Comprehensive support for children and youth focusing on health, education, and nutrition.",
+      details: "Our human development programs address the holistic needs of children and youth, ensuring they have access to quality healthcare, education opportunities, and proper nutrition for healthy growth and development.",
       keyActivities: [
-        "Mobile health clinic deployment",
-        "Healthcare worker training programs", 
-        "Maternal and child health services",
-        "Disease prevention and vaccination campaigns",
-        "Health infrastructure development"
-      ]
-    },
-    {
-      icon: GraduationCap,
-      title: "Education",
-      description: "Providing quality education opportunities for children and adults",
-      details: "Our education initiatives include building schools, training teachers, providing learning materials, and adult literacy programs. We believe education is the foundation for sustainable development and breaking the cycle of poverty.",
-      keyActivities: [
-        "School construction and renovation",
-        "Teacher training and development",
-        "Educational material distribution",
-        "Adult literacy programs",
-        "Scholarship programs for vulnerable children"
-      ]
-    },
-    {
-      icon: Droplet,
-      title: "Water & Sanitation",
-      description: "Ensuring access to clean water and proper sanitation facilities",
-      details: "We work to provide sustainable water solutions through well drilling, water system installation, and sanitation facility construction. Clean water access is fundamental to health, education, and economic development.",
-      keyActivities: [
-        "Water well drilling and maintenance",
-        "Water treatment system installation",
-        "Sanitation facility construction",
-        "Hygiene education programs",
-        "Community water management training"
-      ]
-    },
-    {
-      icon: Zap,
-      title: "Sustainable Energy",
-      description: "Providing renewable energy solutions for sustainable development",
-      details: "Our energy projects focus on solar power installation, energy-efficient technologies, and capacity building for local maintenance. Reliable energy access improves quality of life and enables economic opportunities.",
-      keyActivities: [
-        "Solar panel installation for households",
-        "Community center electrification",
-        "Energy-efficient cookstove distribution",
-        "Technical training for maintenance",
-        "Renewable energy advocacy"
-      ]
-    },
-    {
-      icon: Sprout,
-      title: "Food Security & Agriculture",
-      description: "Enhancing agricultural productivity and food security",
-      details: "We support communities through improved farming techniques, drought-resistant crops, livestock programs, and nutrition education. Our goal is to ensure sustainable food production and improved nutrition.",
-      keyActivities: [
-        "Agricultural training and extension services",
-        "Drought-resistant seed distribution",
-        "Livestock support programs",
-        "Nutrition education initiatives",
-        "Market linkage facilitation"
-      ]
-    },
-    {
-      icon: Shield,
-      title: "Emergency Relief",
-      description: "Providing rapid response to disasters and humanitarian crises",
-      details: "Our emergency response includes immediate relief supplies, temporary shelter, medical aid, and post-disaster recovery support. We maintain rapid response capabilities for natural disasters and conflict situations.",
-      keyActivities: [
-        "Emergency supply distribution",
-        "Temporary shelter establishment",
-        "Emergency medical services",
-        "Evacuation and rescue operations",
-        "Post-disaster recovery programs"
+        "Group home care for orphaned children",
+        "Educational support and sponsorship programs",
+        "Health and nutrition services",
+        "Psychosocial support and counseling",
+        "Youth learning centers and skills development"
       ]
     },
     {
       icon: Users,
-      title: "Economic Development",
-      description: "Empowering communities through economic opportunities",
-      details: "We provide microfinance, vocational training, small business support, and women's empowerment programs. Economic development creates sustainable livelihoods and reduces dependency on aid.",
+      title: "Community Empowerment - Livelihoods",
+      description: "Building sustainable livelihoods and strengthening community capacity for economic independence.",
+      details: "We empower communities through economic strengthening initiatives, capacity building programs, and sustainable livelihood opportunities that promote self-reliance and long-term development.",
       keyActivities: [
-        "Microfinance and credit programs",
-        "Vocational skills training",
-        "Small business development support",
-        "Women's empowerment initiatives",
-        "Youth employment programs"
+        "Village Savings and Loan Associations (VSLA)",
+        "Vocational training and skills development",
+        "Income generation activities",
+        "Community-based organizations capacity building",
+        "Microfinance and economic strengthening"
       ]
     },
     {
-      icon: Building,
-      title: "Infrastructure Development",
-      description: "Building essential infrastructure for community development",
-      details: "Our infrastructure projects include road construction, bridge building, community centers, and market facilities. Good infrastructure connects communities to opportunities and essential services.",
+      icon: Scale,
+      title: "Good Governance and Human Rights",
+      description: "Promoting transparency, accountability, and civic engagement for democratic governance.",
+      details: "Our governance programs focus on strengthening democratic institutions, promoting human rights, and enhancing civic participation for transparent and accountable governance systems.",
       keyActivities: [
-        "Rural road construction and repair",
-        "Bridge and culvert construction",
-        "Community center development",
-        "Market facility construction",
-        "Communication infrastructure support"
+        "Social accountability initiatives",
+        "Civic engagement and participation programs",
+        "Human rights advocacy and protection",
+        "Gender responsive budgeting",
+        "Civil society strengthening"
+      ]
+    },
+    {
+      icon: Shield,
+      title: "Social Cohesion and Community Resilience",
+      description: "Building stronger, more resilient communities through social integration and conflict resolution.",
+      details: "We work to strengthen social bonds, promote peaceful coexistence, and build community resilience against various shocks and stresses through inclusive development approaches.",
+      keyActivities: [
+        "Conflict prevention and resolution",
+        "Community dialogue and mediation",
+        "Social integration programs",
+        "Peace building initiatives",
+        "Community resilience building"
+      ]
+    },
+    {
+      icon: Zap,
+      title: "Humanitarian Aid and Emergency Preparedness",
+      description: "Rapid response to emergencies and building community preparedness for disasters.",
+      details: "Our emergency response programs provide immediate relief during crises while building long-term preparedness and resilience in vulnerable communities.",
+      keyActivities: [
+        "Emergency relief distribution",
+        "Disaster risk reduction",
+        "Emergency preparedness training",
+        "Early warning systems",
+        "Post-emergency recovery support"
+      ]
+    },
+    {
+      icon: Activity,
+      title: "Gender Equality and Social Inclusion (GESI)",
+      description: "Promoting gender equality and ensuring inclusive participation of all community members.",
+      details: "We mainstream gender equality and social inclusion across all our programs to ensure equal opportunities and participation for all, regardless of gender, age, disability, or social status.",
+      keyActivities: [
+        "Women's empowerment programs",
+        "Girls' education and protection",
+        "Disability inclusion initiatives",
+        "LGBTI+ rights advocacy",
+        "Age-inclusive programming"
+      ]
+    },
+    {
+      icon: TreePine,
+      title: "Environmental Sustainability and Climate Resilience",
+      description: "Protecting the environment and building resilience to climate change impacts.",
+      details: "Our environmental programs focus on sustainable natural resource management, climate adaptation, and building community resilience to environmental challenges.",
+      keyActivities: [
+        "Environmental conservation projects",
+        "Climate adaptation initiatives",
+        "Sustainable agriculture promotion",
+        "Renewable energy programs",
+        "Green space development"
       ]
     }
   ];
@@ -118,10 +105,11 @@ const ThematicAreas = () => {
         <section className="py-20 bg-gradient-hero">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-              Our Thematic Areas
+              Our Priority Areas
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
-              Comprehensive humanitarian programs addressing critical needs across multiple sectors
+            <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto">
+              Comprehensive approaches to addressing the multifaceted needs of vulnerable populations 
+              through sustainable development and humanitarian intervention
             </p>
           </div>
         </section>
@@ -130,7 +118,7 @@ const ThematicAreas = () => {
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-8">
-              {thematicAreas.map((area, index) => (
+              {priorityAreas.map((area, index) => (
                 <Card key={index} className="shadow-medium hover:shadow-strong transition-all">
                   <CardHeader>
                     <div className="flex items-center space-x-4 mb-4">
@@ -166,11 +154,11 @@ const ThematicAreas = () => {
         <section className="py-20 bg-muted">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-4xl font-bold text-center mb-16 text-foreground">
-              Detailed Thematic Focus
+              Detailed Priority Areas
             </h2>
             
             <Accordion type="single" collapsible className="space-y-4">
-              {thematicAreas.map((area, index) => (
+              {priorityAreas.map((area, index) => (
                 <AccordionItem key={index} value={`item-${index}`} className="bg-background rounded-lg px-6">
                   <AccordionTrigger className="text-left hover:no-underline">
                     <div className="flex items-center space-x-3">
@@ -204,7 +192,7 @@ const ThematicAreas = () => {
         <section className="py-20 bg-gradient-primary">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-4xl font-bold mb-8 text-primary-foreground">
-              Support Our Thematic Areas
+              Support Our Priority Areas
             </h2>
             <p className="text-xl mb-8 text-primary-foreground/90 max-w-3xl mx-auto">
               Your support enables us to work across all these critical areas and create comprehensive 
@@ -223,7 +211,7 @@ const ThematicAreas = () => {
                 className="inline-flex items-center px-8 py-4 bg-white/10 text-white border border-white/20 rounded-lg hover:bg-white/20 transition-all"
               >
                 View Our Projects
-                <Building className="w-5 h-5 ml-2" />
+                <ArrowRight className="w-5 h-5 ml-2" />
               </a>
             </div>
           </div>
@@ -233,4 +221,4 @@ const ThematicAreas = () => {
   );
 };
 
-export default ThematicAreas;
+export default PriorityAreas;
