@@ -7,95 +7,167 @@ import { Calendar, MapPin, Users, Target } from "lucide-react";
 const Projects = () => {
   const ongoingProjects = [
     {
-      title: "Clean Water Initiative - Rural Kenya",
-      description: "Installing water wells and sanitation systems in 10 rural communities to provide clean, accessible water for over 2,000 residents.",
-      location: "Turkana County, Kenya",
-      startDate: "January 2024",
-      endDate: "December 2024",
-      beneficiaries: "2,000+",
-      progress: 65,
-      budget: "$150,000",
-      status: "In Progress",
-      category: "Water & Sanitation"
-    },
-    {
-      title: "Mobile Health Clinics - Somalia",
-      description: "Deploying mobile medical units to reach remote communities with essential healthcare services, including vaccinations and maternal care.",
-      location: "Puntland, Somalia",
-      startDate: "March 2024",
-      endDate: "February 2025",
-      beneficiaries: "5,000+",
-      progress: 40,
+      title: "Sponsorship for Children Foster Care",
+      description: "Providing comprehensive support for children in foster care through sponsored care programs that ensure their basic needs, education, and emotional well-being.",
+      location: "Multiple Regions, Ethiopia",
+      startDate: "January 2020",
+      endDate: "Ongoing",
+      beneficiaries: "130",
+      progress: 85,
       budget: "$200,000",
       status: "In Progress",
-      category: "Healthcare"
+      category: "Child Development"
     },
     {
-      title: "School Construction Project - Ethiopia",
-      description: "Building 3 primary schools with modern facilities to provide quality education for children in underserved rural areas.",
-      location: "Amhara Region, Ethiopia",
-      startDate: "June 2024",
-      endDate: "May 2025",
-      beneficiaries: "1,200+",
-      progress: 25,
+      title: "Group Home Program",
+      description: "Operating family-style group homes where dedicated mothers care for 8-10 children, providing them with a loving family environment and comprehensive support.",
+      location: "Addis Ababa & Surrounding Areas",
+      startDate: "2005",
+      endDate: "Ongoing",
+      beneficiaries: "120",
+      progress: 90,
       budget: "$300,000",
+      status: "In Progress",
+      category: "Child Development"
+    },
+    {
+      title: "Youth Learning Center",
+      description: "Providing skills training, education support, and capacity building programs for youth to enhance their employability and life skills.",
+      location: "Addis Ababa",
+      startDate: "September 2023",
+      endDate: "Ongoing",
+      beneficiaries: "200",
+      progress: 70,
+      budget: "$150,000",
       status: "In Progress",
       category: "Education"
     },
     {
-      title: "Women's Empowerment Program - Nigeria",
-      description: "Training women in sustainable farming techniques and providing microfinance support to establish small businesses.",
-      location: "Kaduna State, Nigeria",
-      startDate: "February 2024",
-      endDate: "January 2025",
-      beneficiaries: "800+",
-      progress: 55,
-      budget: "$120,000",
+      title: "Urban Productive Safety Net",
+      description: "Supporting street adults, children, and women with children through productive safety net programs and job creation initiatives.",
+      location: "Urban Areas, Ethiopia",
+      startDate: "March 2024",
+      endDate: "February 2026",
+      beneficiaries: "500",
+      progress: 45,
+      budget: "$250,000",
       status: "In Progress",
       category: "Economic Development"
+    },
+    {
+      title: "Inclusive Social and Behavior Change",
+      description: "Empowering communities through inclusive social and behavior change interventions that promote positive community transformation.",
+      location: "Various Communities, Ethiopia",
+      startDate: "June 2024",
+      endDate: "May 2025",
+      beneficiaries: "1,500",
+      progress: 30,
+      budget: "$180,000",
+      status: "In Progress",
+      category: "Community Development"
     }
   ];
 
   const completedProjects = [
     {
-      title: "Emergency Relief - Flood Response",
-      description: "Provided immediate relief supplies, temporary shelter, and medical aid to flood-affected communities.",
-      location: "South Sudan",
-      completedDate: "September 2023",
-      beneficiaries: "3,000+",
-      budget: "$180,000",
-      impact: "Distributed 500 emergency kits, established 2 temporary clinics",
-      category: "Emergency Relief"
+      title: "Ethiopian Social Accountability Project (ESAP2, ESAP3)",
+      description: "Promoted transparency, accountability, and citizen participation in governance and public service delivery across multiple phases.",
+      location: "Multiple Regions, Ethiopia",
+      completedDate: "December 2022",
+      beneficiaries: "5,000",
+      budget: "$400,000",
+      impact: "Strengthened citizen engagement and improved public service delivery in target communities",
+      category: "Governance"
     },
     {
-      title: "Teacher Training Initiative",
-      description: "Trained 150 teachers in modern pedagogy and provided educational resources to improve learning outcomes.",
-      location: "Rwanda",
-      completedDate: "August 2023",
-      beneficiaries: "4,500+ students",
-      budget: "$95,000",
-      impact: "150 teachers trained, 15 schools equipped with learning materials",
-      category: "Education"
+      title: "Ethiopian Civic Engagement (ECE)",
+      description: "Enhanced civic participation and democratic governance through capacity building and community engagement initiatives.",
+      location: "Various Regions, Ethiopia",
+      completedDate: "September 2021",
+      beneficiaries: "3,000",
+      budget: "$300,000",
+      impact: "Increased civic awareness and participation in democratic processes",
+      category: "Governance"
     },
     {
-      title: "Maternal Health Program",
-      description: "Established prenatal care centers and trained community health workers to support expecting mothers.",
-      location: "Tanzania",
-      completedDate: "November 2023",
-      beneficiaries: "1,500+",
-      budget: "$140,000",
-      impact: "5 health centers established, 50 health workers trained",
+      title: "Civil Society Support Program (CSSP2)",
+      description: "Strengthened civil society organizations through gender responsive budgeting initiatives and capacity building support.",
+      location: "National, Ethiopia",
+      completedDate: "June 2020",
+      beneficiaries: "1,500",
+      budget: "$250,000",
+      impact: "Enhanced organizational capacity and gender-responsive programming among CSOs",
+      category: "Governance"
+    },
+    {
+      title: "Integrated Community Based HIV/AIDS Program",
+      description: "Provided comprehensive HIV/AIDS prevention, care, and support services in communities affected by the epidemic.",
+      location: "Multiple Regions, Ethiopia",
+      completedDate: "December 2019",
+      beneficiaries: "8,000",
+      budget: "$500,000",
+      impact: "Reduced HIV transmission and improved quality of life for affected individuals and families",
       category: "Healthcare"
     },
     {
-      title: "Solar Energy Project",
-      description: "Installed solar panels in 8 villages to provide sustainable electricity for homes and community centers.",
-      location: "Mali",
-      completedDate: "October 2023",
-      beneficiaries: "2,200+",
+      title: "Village Saving and Loan (VSLA)",
+      description: "Empowered vulnerable community members through village savings and loan associations to improve economic resilience.",
+      location: "Rural Communities, Ethiopia",
+      completedDate: "March 2018",
+      beneficiaries: "1,200",
+      budget: "$120,000",
+      impact: "Established sustainable community-based financial systems and improved household incomes",
+      category: "Economic Development"
+    },
+    {
+      title: "Girls Empowerment Project",
+      description: "Promoted girls' education, protection, and empowerment through comprehensive support programs.",
+      location: "Various Regions, Ethiopia",
+      completedDate: "August 2017",
+      beneficiaries: "800",
+      budget: "$150,000",
+      impact: "Increased girls' school enrollment and completion rates while reducing harmful practices",
+      category: "Education"
+    },
+    {
+      title: "SCRHA/PATH Project",
+      description: "Collaborated with SCRHA and PATH to improve reproductive health and family planning services.",
+      location: "Somali Region, Ethiopia",
+      completedDate: "November 2016",
+      beneficiaries: "2,500",
+      budget: "$200,000",
+      impact: "Improved access to reproductive health services and family planning education",
+      category: "Healthcare"
+    },
+    {
+      title: "Home Based Care for HIV/AIDS Patients",
+      description: "Provided dignified home-based care services for bedridden HIV/AIDS patients, bringing comfort and hope to families.",
+      location: "Urban and Rural Areas, Ethiopia",
+      completedDate: "December 2015",
+      beneficiaries: "1,500",
+      budget: "$180,000",
+      impact: "Improved quality of life and dignity for terminally ill patients and reduced stigma",
+      category: "Healthcare"
+    },
+    {
+      title: "Hospice Project",
+      description: "Established hospice services for terminally ill individuals, providing compassionate end-of-life care and family support.",
+      location: "Addis Ababa, Ethiopia",
+      completedDate: "June 2014",
+      beneficiaries: "500",
+      budget: "$100,000",
+      impact: "Provided dignified end-of-life care and supported grieving families",
+      category: "Healthcare"
+    },
+    {
+      title: "Lion Kids Kindergarten and Primary School",
+      description: "Operated a free formal kindergarten and primary school as a social service to support vulnerable children's education.",
+      location: "Addis Ababa, Ethiopia",
+      completedDate: "July 2013",
+      beneficiaries: "300",
       budget: "$250,000",
-      impact: "200 households connected, 8 community centers powered",
-      category: "Sustainable Energy"
+      impact: "Provided quality free education and prepared children for successful academic futures",
+      category: "Education"
     }
   ];
 
@@ -103,10 +175,10 @@ const Projects = () => {
     const colors: { [key: string]: string } = {
       "Healthcare": "bg-red-100 text-red-800",
       "Education": "bg-blue-100 text-blue-800",
-      "Water & Sanitation": "bg-cyan-100 text-cyan-800",
-      "Emergency Relief": "bg-orange-100 text-orange-800",
+      "Child Development": "bg-purple-100 text-purple-800",
+      "Governance": "bg-indigo-100 text-indigo-800",
       "Economic Development": "bg-green-100 text-green-800",
-      "Sustainable Energy": "bg-yellow-100 text-yellow-800"
+      "Community Development": "bg-orange-100 text-orange-800"
     };
     return colors[category] || "bg-gray-100 text-gray-800";
   };
