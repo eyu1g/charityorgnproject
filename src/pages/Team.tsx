@@ -1,7 +1,37 @@
 import Layout from "@/components/layout/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Linkedin, Twitter } from "lucide-react";
+import { Mail, Linkedin, Twitter, ChevronDown, ChevronUp } from "lucide-react";
+import { useState } from "react";
+
+const FounderBio = ({ bio }: { bio: string }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const truncatedBio = bio.slice(0, 400) + "...";
+  
+  return (
+    <div className="space-y-4">
+      <p className="text-lg text-muted-foreground leading-relaxed">
+        {isExpanded ? bio : truncatedBio}
+      </p>
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="inline-flex items-center text-primary hover:text-primary-light transition-colors font-medium"
+      >
+        {isExpanded ? (
+          <>
+            Read Less
+            <ChevronUp className="w-4 h-4 ml-1" />
+          </>
+        ) : (
+          <>
+            Read More
+            <ChevronDown className="w-4 h-4 ml-1" />
+          </>
+        )}
+      </button>
+    </div>
+  );
+};
 
 const Team = () => {
   const founder = {
@@ -105,41 +135,41 @@ const Team = () => {
         <section className="py-20">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-16 text-foreground">Our Founder</h2>
-            <div className="max-w-4xl mx-auto">
-              <Card className="shadow-strong">
-                <CardContent className="p-8">
-                  <div className="grid md:grid-cols-3 gap-8 items-center">
-                    <div className="md:col-span-1">
+          <div className="max-w-6xl mx-auto">
+            <Card className="shadow-strong">
+              <CardContent className="p-8">
+                <div className="grid lg:grid-cols-2 gap-12 items-start">
+                  <div className="space-y-6">
+                    <div className="aspect-square w-full max-w-md mx-auto">
                       <img
                         src={founder.image}
                         alt={founder.name}
-                        className="w-full aspect-square object-cover rounded-lg shadow-medium"
+                        className="w-full h-full object-cover rounded-lg shadow-medium"
                       />
-                      <div className="mt-4 space-y-2">
-                        <div className="flex justify-center space-x-4">
-                          <a href={`mailto:${founder.email}`} className="text-primary hover:text-primary-light">
-                            <Mail className="w-5 h-5" />
-                          </a>
-                          <a href={founder.linkedin} className="text-primary hover:text-primary-light">
-                            <Linkedin className="w-5 h-5" />
-                          </a>
-                          <a href={founder.twitter} className="text-primary hover:text-primary-light">
-                            <Twitter className="w-5 h-5" />
-                          </a>
-                        </div>
-                      </div>
                     </div>
-                    <div className="md:col-span-2">
-                      <h3 className="text-3xl font-bold mb-2 text-foreground">{founder.name}</h3>
-                      <Badge variant="secondary" className="mb-4">{founder.role}</Badge>
-                      <p className="text-lg text-muted-foreground leading-relaxed">
-                        {founder.bio}
-                      </p>
+                    <div className="flex justify-center space-x-4">
+                      <a href={`mailto:${founder.email}`} className="text-primary hover:text-primary-light">
+                        <Mail className="w-5 h-5" />
+                      </a>
+                      <a href={founder.linkedin} className="text-primary hover:text-primary-light">
+                        <Linkedin className="w-5 h-5" />
+                      </a>
+                      <a href={founder.twitter} className="text-primary hover:text-primary-light">
+                        <Twitter className="w-5 h-5" />
+                      </a>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            </div>
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-3xl font-bold mb-2 text-foreground">{founder.name}</h3>
+                      <Badge variant="secondary" className="mb-4">{founder.role}</Badge>
+                    </div>
+                    <FounderBio bio={founder.bio} />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
           </div>
         </section>
 

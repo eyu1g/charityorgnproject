@@ -8,6 +8,7 @@ const PriorityAreas = () => {
     {
       icon: Heart,
       title: "Human Development - Child and Youth Development",
+      subtitle: "Health, Education, and Nutrition",
       description: "Comprehensive support for children and youth focusing on health, education, and nutrition.",
       details: "Our human development programs address the holistic needs of children and youth, ensuring they have access to quality healthcare, education opportunities, and proper nutrition for healthy growth and development.",
       keyActivities: [
@@ -20,7 +21,8 @@ const PriorityAreas = () => {
     },
     {
       icon: Users,
-      title: "Community Empowerment - Livelihoods",
+      title: "Community Empowerment Livelihoods",
+      subtitle: "Economic Empowerment",
       description: "Building sustainable livelihoods and strengthening community capacity for economic independence.",
       details: "We empower communities through economic strengthening initiatives, capacity building programs, and sustainable livelihood opportunities that promote self-reliance and long-term development.",
       keyActivities: [
@@ -33,7 +35,8 @@ const PriorityAreas = () => {
     },
     {
       icon: Scale,
-      title: "Good Governance and Human Rights",
+      title: "Good Governance and Human Rights and Civic Engagement",
+      subtitle: "Democratic Governance",
       description: "Promoting transparency, accountability, and civic engagement for democratic governance.",
       details: "Our governance programs focus on strengthening democratic institutions, promoting human rights, and enhancing civic participation for transparent and accountable governance systems.",
       keyActivities: [
@@ -47,6 +50,7 @@ const PriorityAreas = () => {
     {
       icon: Shield,
       title: "Social Cohesion and Community Resilience",
+      subtitle: "Community Strengthening",
       description: "Building stronger, more resilient communities through social integration and conflict resolution.",
       details: "We work to strengthen social bonds, promote peaceful coexistence, and build community resilience against various shocks and stresses through inclusive development approaches.",
       keyActivities: [
@@ -60,6 +64,7 @@ const PriorityAreas = () => {
     {
       icon: Zap,
       title: "Humanitarian Aid and Emergency Preparedness",
+      subtitle: "Crisis Response",
       description: "Rapid response to emergencies and building community preparedness for disasters.",
       details: "Our emergency response programs provide immediate relief during crises while building long-term preparedness and resilience in vulnerable communities.",
       keyActivities: [
@@ -73,6 +78,7 @@ const PriorityAreas = () => {
     {
       icon: Activity,
       title: "Gender Equality and Social Inclusion (GESI)",
+      subtitle: "Inclusive Development",
       description: "Promoting gender equality and ensuring inclusive participation of all community members.",
       details: "We mainstream gender equality and social inclusion across all our programs to ensure equal opportunities and participation for all, regardless of gender, age, disability, or social status.",
       keyActivities: [
@@ -86,6 +92,7 @@ const PriorityAreas = () => {
     {
       icon: TreePine,
       title: "Environmental Sustainability and Climate Resilience",
+      subtitle: "Climate Action",
       description: "Protecting the environment and building resilience to climate change impacts.",
       details: "Our environmental programs focus on sustainable natural resource management, climate adaptation, and building community resilience to environmental challenges.",
       keyActivities: [
@@ -125,7 +132,10 @@ const PriorityAreas = () => {
                       <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
                         <area.icon className="w-6 h-6 text-primary-foreground" />
                       </div>
-                      <CardTitle className="text-2xl text-foreground">{area.title}</CardTitle>
+                      <div>
+                        <CardTitle className="text-2xl text-foreground">{area.title}</CardTitle>
+                        <p className="text-sm text-primary font-medium">{area.subtitle}</p>
+                      </div>
                     </div>
                     <p className="text-muted-foreground text-lg">{area.description}</p>
                   </CardHeader>
