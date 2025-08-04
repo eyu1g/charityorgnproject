@@ -9,6 +9,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import hopeLogo from "@/assets/hopelogo.jpg";
+
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,9 +36,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <Heart className="w-6 h-6 text-primary-foreground" />
-            </div>
+          <div className="w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center p-1">
+  <img src={hopeLogo} alt="Hope Logo" className="w-full h-full object-contain" />
+</div>
+
+
             <span className="font-bold text-xl text-foreground">HFC</span>
           </Link>
 
